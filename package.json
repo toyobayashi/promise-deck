@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "promise-deck",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "test": "node test"
+  },
+  "devDependencies": {
+    "code-surfer": "3.1.1",
+    "mdx-deck": "4.1.1",
+    "promises-aplus-tests": "^2.1.2"
+  }
+}
