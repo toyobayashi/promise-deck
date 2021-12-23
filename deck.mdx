@@ -97,7 +97,7 @@ class MyPromise {
 }
 ```
 
-```js title="" subtitle="Implement reject"
+```js 12:16,19:27 title="" subtitle="Implement reject"
 const PromiseStatus = {
   PENDING: 'pending',
   FULFILLED: 'fulfilled',
@@ -112,6 +112,7 @@ class MyPromise {
 
     this._status = PromiseStatus.PENDING
     this._reason = undefined
+    this._onSuccess = []
     this._onFail = []
 
     const reject = (reason) => {
@@ -139,7 +140,7 @@ class MyPromise {
 }
 ```
 
-```js title="" subtitle="Implement resolve like reject"
+```js 12:17,32:40 title="" subtitle="Implement resolve like reject"
 const PromiseStatus = {
   PENDING: 'pending',
   FULFILLED: 'fulfilled',
@@ -1520,6 +1521,7 @@ class MyAggregateError extends Error {
 
 class MyPromise {
   /* ... */
+
   static any (iterable) {
     return new MyPromise((resolve, reject) => {
       let size = 0
@@ -1637,6 +1639,7 @@ class MyAggregateError extends Error {
 
 class MyPromise {
   /* ... */
+
   static any (iterable) {
     return new MyPromise((resolve, reject) => {
       let size = 0
